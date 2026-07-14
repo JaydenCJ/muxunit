@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="430" viewBox="0 0 720 430" font-family="Menlo, Consolas, monospace" font-size="14">
+  <rect width="720" height="430" rx="10" fill="#101418"/>
+  <circle cx="24" cy="22" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="22" r="6" fill="#ffbd2e"/>
+  <circle cx="64" cy="22" r="6" fill="#27c93f"/>
+  <text x="360" y="27" fill="#8b949e" text-anchor="middle" font-size="12">muxunit — report algebra for sharded CI</text>
+  <g fill="#c9d1d9">
+    <text x="24" y="62"><tspan fill="#7ee787">$</tspan> muxunit merge --dedupe prefer-pass -o merged.xml shards/*.xml shards/*.tap</text>
+    <text x="24" y="86"><tspan fill="#7ee787">$</tspan> muxunit summary merged.xml</text>
+    <text x="24" y="116" fill="#d2a8ff">suite   total    pass    fail   error    skip       time</text>
+    <text x="24" y="138">api         3       <tspan fill="#7ee787">3</tspan>       0       0       0     0.820s</text>
+    <text x="24" y="160">e2e         3       1       <tspan fill="#f778ba">1</tspan>       0       1     0.000s</text>
+    <text x="24" y="182">web         1       <tspan fill="#7ee787">1</tspan>       0       0       0     0.120s</text>
+    <text x="24" y="204" fill="#79c0ff">TOTAL       7       5       1       0       1     0.940s</text>
+    <text x="24" y="240"><tspan fill="#7ee787">$</tspan> muxunit diff baseline.xml merged.xml</text>
+    <text x="24" y="270" fill="#f778ba">new failures (1)</text>
+    <text x="24" y="292">  e2e/checkout flow  <tspan fill="#7ee787">pass</tspan> -&gt; <tspan fill="#f778ba">fail</tspan>  (button not found)</text>
+    <text x="24" y="314" fill="#7ee787">fixed (1)</text>
+    <text x="24" y="336">  api/Auth/rejects bad email  <tspan fill="#f778ba">fail</tspan> -&gt; <tspan fill="#7ee787">pass</tspan></text>
+    <text x="24" y="362" fill="#8b949e">old: 7 tests (1 red)  new: 7 tests (1 red)</text>
+    <text x="24" y="384" fill="#f778ba">diff: REGRESSIONS</text>
+    <text x="24" y="410" fill="#8b949e">exit code 1 — one static binary, JUnit + TAP, zero dependencies</text>
+  </g>
+</svg>
